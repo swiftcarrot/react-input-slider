@@ -1,0 +1,31 @@
+{
+  "name": "react-input-slider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangzuo/react-input-slider.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "input",
+    "slicer"
+  ],
+  "author": "Wang Zuo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangzuo/react-input-slider/issues"
+  },
+  "homepage": "https://github.com/wangzuo/react-input-slider",
+  "dependencies": {
+    "react": "^0.13.1"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.12.2"
+  }
+}
