@@ -1,10 +1,7 @@
 var React = require('react');
-var PureRenderMixin = require('react/addons').PureRenderMixin;
 
 module.exports = React.createClass({
   displayName: 'InputSlider',
-
-  mixins: [PureRenderMixin],
 
   render: function() {
     var pos = this.getPosition();
