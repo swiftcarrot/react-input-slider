@@ -1,1 +1,1 @@
-module.exports = require('./lib/input-slider.jsx');
+module.exports = require('./dist/input-slider.js');
