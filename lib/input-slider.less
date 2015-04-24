@@ -10,22 +10,37 @@
   user-select: none;
   -webkit-user-select: none;
   border: 1px solid #aaa;
+
+  .handle {
+    position: absolute;
+
+    &:after {
+      position: relative;
+      display: block;
+      border: 1px solid #aaa;
+      background-color: #eee;
+      content: '';
+    }
+  }
 }
 
 .slider-x .handle {
-  position: absolute;
-  width: 5px;
-  height: 12px;
-  border: 1px solid #aaa;
-  background-color: #eee;
+
+  &:after {
+    top: -1px;
+    left: -1px;
+    width: 5px;
+    height: 12px;
+  }
 }
 
 .slider-y .handle {
-  position: absolute;
-  width: 12px;
-  height: 5px;
-  border: 1px solid #aaa;
-  background-color: #eee;
+  &:after {
+    left: -1px;
+    top: -1px;
+    width: 12px;
+    height: 5px;
+  }
 }
 
 .slider-xy {

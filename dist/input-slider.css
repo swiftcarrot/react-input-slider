@@ -12,19 +12,29 @@
   -webkit-user-select: none;
   border: 1px solid #aaa;
 }
-.slider-x .handle {
-  position: absolute;
-  width: 5px;
-  height: 12px;
-  border: 1px solid #aaa;
-  background-color: #eee;
-}
+.slider-x .handle,
 .slider-y .handle {
   position: absolute;
-  width: 12px;
-  height: 5px;
+}
+.slider-x .handle:after,
+.slider-y .handle:after {
+  position: relative;
+  display: block;
   border: 1px solid #aaa;
   background-color: #eee;
+  content: '';
+}
+.slider-x .handle:after {
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: 12px;
+}
+.slider-y .handle:after {
+  left: -1px;
+  top: -1px;
+  width: 12px;
+  height: 5px;
 }
 .slider-xy {
   position: relative;
