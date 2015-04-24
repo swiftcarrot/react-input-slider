@@ -1,7 +1,7 @@
 {
   "name": "react-input-slider",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "React input slider component",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
     "react",
     "react-component",
     "input",
-    "slicer"
+    "slider"
   ],
   "author": "Wang Zuo",
   "license": "MIT",

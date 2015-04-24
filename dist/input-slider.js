@@ -43,17 +43,22 @@ module.exports = React.createClass({
       var top = pos.top;
       var axis = this.props.axis;
 
-      if(axis === 'x' && left >= 0 && left <= width) {
+      if(left < 0) left = 0;
+      if(left > width) left = width;
+      if(top < 0) top = 0;
+      if(top > height) top = height;
+
+      if(axis === 'x') {
         this.props.onChange({
           x: left / width * this.props.xmax,
           y: 0
         });
-      } else if(axis === 'y' && top >= 0 && top <= height) {
+      } else if(axis === 'y') {
         this.props.onChange({
           x: 0,
           y: top / height * this.props.ymax,
         });
-      } else if(left >= 0 && left <= width && top >= 0 && top <= height) {
+      } else {
         this.props.onChange({
           x: left / width * this.props.xmax,
           y: top / height * this.props.ymax

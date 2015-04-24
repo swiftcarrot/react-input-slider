@@ -20,7 +20,7 @@ var App = React.createClass({
             x={this.state.x} xmax={100}
             y={this.state.y} ymax={100}
             onChange={this._onChange}/>
-          <span>{'x: ' + this.state.x}</span>
+          <span>{'x: ' + this.state.x}</span><br/>
           <span>{'y: ' + this.state.y}</span>
         </div>
 
