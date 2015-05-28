@@ -1,5 +1,5 @@
 all:
-	jsx --no-cache-dir lib dist
+	babel lib --out-dir dist
 	lessc lib/input-slider.less > dist/input-slider.css
 clean:
 	rm dist/*
