@@ -8,8 +8,8 @@ var App = React.createClass({
     return {
       x: 21,
       y: 73,
-      left: 40,
-      top: 90
+      left: 120,
+      top: 120
     };
   },
 
@@ -17,24 +17,36 @@ var App = React.createClass({
     return (
       <div className="wrap">
         <div className="example example-xy">
-          <InputSlider className="slider slider-xy"
-            x={this.state.x} xmax={100}
-            y={this.state.y} ymax={100}
+          <InputSlider
+            className="slider slider-xy"
+            axis='xy'
+            x={this.state.x}
+            xmax={100}
+            y={this.state.y}
+            ymax={100}
             onChange={this.handleChange}/>
           <span>{'x: ' + this.state.x}</span><br/>
           <span>{'y: ' + this.state.y}</span>
         </div>
 
         <div className="example example-x">
-          <InputSlider className="slider slider-x"
-            axis="x" x={this.state.left} xmax={360}
+          <InputSlider
+            className="slider slider-x"
+            axis="x"
+            x={this.state.left}
+            xmin={100}
+            xmax={360}
             onChange={this.handleChangeX}/>
           <span>{'x: ' + this.state.left}</span>
         </div>
 
         <div className="example example-y">
-          <InputSlider className="slider slider-y"
-            axis="y" y={this.state.top} ymax={360}
+          <InputSlider
+            className="slider slider-y"
+            axis="y"
+            y={this.state.top}
+            ymin={100}
+            ymax={360}
             onChange={this.handleChangeY}/>
           <span>{'y: ' + this.state.top}</span>
         </div>
