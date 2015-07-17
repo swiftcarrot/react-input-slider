@@ -1,3 +1,5 @@
+@xy-handle-size: 8px;
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -7,9 +9,11 @@
 .slider-x,
 .slider-y {
   position: relative;
-  user-select: none;
-  -webkit-user-select: none;
   border: 1px solid #aaa;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   .handle {
     position: absolute;
@@ -25,7 +29,6 @@
 }
 
 .slider-x .handle {
-
   &:after {
     top: -1px;
     left: -1px;
@@ -55,10 +58,10 @@
   &:after {
     position: relative;
     display: block;
-    top: -4px;
-    left: -4px;
-    width: 8px;
-    height: 8px;
+    top: -@xy-handle-size/2;
+    left: -@xy-handle-size/2;
+    width: @xy-handle-size;
+    height: @xy-handle-size;
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid #fff;
     border-radius: 50%;
