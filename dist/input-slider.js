@@ -14,9 +14,7 @@ module.exports = React.createClass({
     xmin: React.PropTypes.number,
     y: React.PropTypes.number,
     ymax: React.PropTypes.number,
-    ymin: React.PropTypes.number,
-    xstep: React.PropTypes.number,
-    ystep: React.PropTypes.number
+    ymin: React.PropTypes.number
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -37,7 +35,11 @@ module.exports = React.createClass({
         className: 'handle',
         ref: 'handle',
         onMouseDown: this.handleMounseDown,
-        style: pos })
+        onClick: function (e) {
+          e.stopPropagation();
+        },
+        style: pos
+      })
     );
   },
 
@@ -98,8 +100,8 @@ module.exports = React.createClass({
       y: e.clientY
     };
 
-    window.addEventListener('mousemove', this.handleDrag);
-    window.addEventListener('mouseup', this.handleDragEnd);
+    document.addEventListener('mousemove', this.handleDrag);
+    document.addEventListener('mouseup', this.handleDragEnd);
   },
 
   handleDrag: function handleDrag(e) {
@@ -114,8 +116,8 @@ module.exports = React.createClass({
   },
 
   handleDragEnd: function handleDragEnd(e) {
-    window.removeEventListener('mousemove', this.handleDrag);
-    window.removeEventListener('mouseup', this.handleDragEnd);
+    document.removeEventListener('mousemove', this.handleDrag);
+    document.removeEventListener('mouseup', this.handleDragEnd);
   },
 
   handleClick: function handleClick(e) {

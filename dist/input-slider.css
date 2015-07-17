@@ -8,9 +8,11 @@
 .slider-x,
 .slider-y {
   position: relative;
-  user-select: none;
-  -webkit-user-select: none;
   border: 1px solid #aaa;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .slider-x .handle,
 .slider-y .handle {
