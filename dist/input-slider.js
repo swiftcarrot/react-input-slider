@@ -37,6 +37,7 @@ module.exports = React.createClass({
         onMouseDown: this.handleMounseDown,
         onClick: function (e) {
           e.stopPropagation();
+          e.nativeEvent.stopImmediatePropagation();
         },
         style: pos
       })
