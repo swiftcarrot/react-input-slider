@@ -27,10 +27,17 @@ module.exports = React.createClass({
 
   render: function render() {
     var pos = this.getPosition();
+    var axis = this.props.axis;
+    var valueStyle = {};
+    if (axis === 'x') valueStyle.width = pos.left;
+    if (axis === 'y') valueStyle.height = pos.top;
 
     return React.createElement(
       'div',
       _extends({}, this.props, { onClick: this.handleClick }),
+      React.createElement('div', {
+        className: 'value',
+        style: valueStyle }),
       React.createElement('div', {
         className: 'handle',
         ref: 'handle',
@@ -39,8 +46,7 @@ module.exports = React.createClass({
           e.stopPropagation();
           e.nativeEvent.stopImmediatePropagation();
         },
-        style: pos
-      })
+        style: pos })
     );
   },
 

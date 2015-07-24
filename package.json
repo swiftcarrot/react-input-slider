@@ -1,6 +1,6 @@
 {
   "name": "react-input-slider",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "React input slider component",
   "main": "index.js",
   "scripts": {

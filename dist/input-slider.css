@@ -14,6 +14,10 @@
   -ms-user-select: none;
   user-select: none;
 }
+.slider-x .value,
+.slider-y .value {
+  position: absolute;
+}
 .slider-x .handle,
 .slider-y .handle {
   position: absolute;
@@ -32,11 +36,21 @@
   width: 5px;
   height: 12px;
 }
+.slider-x .value {
+  top: 0;
+  height: 10px;
+  background-color: #3498db;
+}
 .slider-y .handle:after {
   left: -1px;
   top: -1px;
   width: 12px;
   height: 5px;
+}
+.slider-y .value {
+  left: 0;
+  width: 10px;
+  background-color: #3498db;
 }
 .slider-xy {
   position: relative;
