@@ -24,7 +24,8 @@ var App = React.createClass({
             xmax={100}
             y={this.state.y}
             ymax={100}
-            onChange={this.handleChange}/>
+            onChange={this.handleChange}
+          />
           <span>{'x: ' + this.state.x}</span><br/>
           <span>{'y: ' + this.state.y}</span>
         </div>
@@ -36,7 +37,8 @@ var App = React.createClass({
             x={this.state.left}
             xmin={100}
             xmax={360}
-            onChange={this.handleChangeX}/>
+            onChange={this.handleChangeX}
+          />
           <span>{'x: ' + this.state.left}</span>
         </div>
 
@@ -47,7 +49,8 @@ var App = React.createClass({
             y={this.state.top}
             ymin={100}
             ymax={360}
-            onChange={this.handleChangeY}/>
+            onChange={this.handleChangeY}
+          />
           <span>{'y: ' + this.state.top}</span>
         </div>
       </div>
