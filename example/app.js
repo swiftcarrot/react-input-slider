@@ -17,8 +17,10 @@ var App = React.createClass({
     return (
       <div className="wrap">
         <div className="example example-xy">
+          <div>{'x: ' + this.state.x}</div>
+          <div>{'y: ' + this.state.y}</div>
           <InputSlider
-            className="slider slider-xy"
+            className="slider"
             axis='xy'
             x={this.state.x}
             xmax={100}
@@ -26,32 +28,30 @@ var App = React.createClass({
             ymax={100}
             onChange={this.handleChange}
           />
-          <span>{'x: ' + this.state.x}</span><br/>
-          <span>{'y: ' + this.state.y}</span>
         </div>
 
         <div className="example example-x">
+          <div>{'x: ' + this.state.left}</div>
           <InputSlider
-            className="slider slider-x"
+            className="slider"
             axis="x"
             x={this.state.left}
             xmin={100}
             xmax={360}
             onChange={this.handleChangeX}
           />
-          <span>{'x: ' + this.state.left}</span>
         </div>
 
         <div className="example example-y">
+          <div>{'y: ' + this.state.top}</div>
           <InputSlider
-            className="slider slider-y"
+            className="slider"
             axis="y"
             y={this.state.top}
             ymin={100}
             ymax={360}
             onChange={this.handleChangeY}
           />
-          <span>{'y: ' + this.state.top}</span>
         </div>
       </div>
     );
@@ -77,4 +77,4 @@ var App = React.createClass({
   }
 });
 
-React.render(<App/>, document.body);
+React.render(<App/>, document.getElementById('app'));
