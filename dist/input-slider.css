@@ -1,66 +1,75 @@
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.slider-x,
-.slider-y {
+.u-slider {
   position: relative;
-  border: 1px solid #aaa;
+  display: inline-block;
+  background-color: #dddddd;
+  border-radius: 3px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.slider-x .value,
-.slider-y .value {
+.u-slider .value {
   position: absolute;
+  background-color: #2e8ece;
+  border-radius: 3px;
 }
-.slider-x .handle,
-.slider-y .handle {
+.u-slider .handle {
   position: absolute;
+  width: 8px;
+  height: 8px;
 }
-.slider-x .handle:after,
-.slider-y .handle:after {
+.u-slider .handle:after {
   position: relative;
   display: block;
-  border: 1px solid #aaa;
-  background-color: #eee;
   content: '';
 }
-.slider-x .handle:after {
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: 12px;
-}
-.slider-x .value {
-  top: 0;
-  height: 10px;
-  background-color: #3498db;
-}
-.slider-y .handle:after {
-  left: -1px;
-  top: -1px;
+.u-slider-x .handle:after,
+.u-slider-y .handle:after {
   width: 12px;
-  height: 5px;
+  height: 12px;
+  background-color: #fff;
+  border: 3px solid #2e8ece;
+  border-radius: 6px;
 }
-.slider-y .value {
+.u-slider-x {
+  height: 8px;
+}
+.u-slider-x .handle {
+  height: 100%;
+}
+.u-slider-x .handle:after {
+  top: -2px;
+  left: -6px;
+}
+.u-slider-x .value {
+  top: 0;
+  height: 100%;
+}
+.u-slider-y {
+  width: 8px;
+}
+.u-slider-y .handle {
+  width: 100%;
+}
+.u-slider-y .handle:after {
+  top: -6px;
+  left: -2px;
+}
+.u-slider-y .value {
   left: 0;
-  width: 10px;
-  background-color: #3498db;
+  width: 100%;
 }
-.slider-xy {
+.u-slider-xy {
   position: relative;
   width: 100%;
   height: 100%;
+  background-color: #2e8ece;
+  border-radius: 0;
 }
-.slider-xy .handle {
+.u-slider-xy .handle {
   position: absolute;
 }
-.slider-xy .handle:after {
+.u-slider-xy .handle:after {
   position: relative;
   display: block;
   top: -4px;

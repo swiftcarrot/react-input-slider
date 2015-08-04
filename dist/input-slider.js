@@ -2,6 +2,7 @@
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var cx = require('classnames');
 var React = require('react');
 
 module.exports = React.createClass({
@@ -34,13 +35,15 @@ module.exports = React.createClass({
 
     return React.createElement(
       'div',
-      _extends({}, this.props, { onClick: this.handleClick }),
+      _extends({}, this.props, {
+        className: cx('u-slider', 'u-slider-' + axis, this.props.className),
+        onClick: this.handleClick }),
       React.createElement('div', {
-        className: 'value',
+        className: "value",
         style: valueStyle }),
       React.createElement('div', {
-        className: 'handle',
-        ref: 'handle',
+        className: "handle",
+        ref: "handle",
         onMouseDown: this.handleMounseDown,
         onClick: function (e) {
           e.stopPropagation();
