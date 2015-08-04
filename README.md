@@ -5,7 +5,7 @@ React input slider component
 npm install react-input-slider --save
 ```
 ### Demo
-[https://wangzuo.github.io/react-input-slider](https://wangzuo.github.io/react-input-slider)
+[https://wangzuo.github.io/react-input-slider/example](https://wangzuo.github.io/react-input-slider/example)
 ### Usage
 ``` javascript
 var React = require('react');
@@ -28,7 +28,8 @@ var App = React.createClass({
         xmax={100}
         y={this.state.y}
         ymax={100}
-        onChange={this.handleChange}/>
+        onChange={this.handleChange}
+      />
     );
   },
 
@@ -41,10 +42,14 @@ var App = React.createClass({
 });
 ```
 ### Props
-- `axis`: type of slider (`'x'`, `'y'`, `'xy'`)
-- `x`: value of x
-- `xmax`: max of x
-- `xmin`: min of x
-- `y`: value of y
-- `ymax`: max of y
-- `ymin`: min of y
+|name |type   | description | default
+|-----|----   | ----------  | -------
+|axis |string | type of slider ('x', 'y', 'xy')| 'x'
+|x    |number | value of x  ||
+|xmax |number | max of x    ||
+|xmin |number | min of x    | 0
+|y    |number | value of y  ||
+|ymax |number | max of y    ||
+|ymin |number | min of y    | 0
+### License
+MIT
