@@ -39,11 +39,11 @@ module.exports = React.createClass({
         className: cx('u-slider', 'u-slider-' + axis, this.props.className),
         onClick: this.handleClick }),
       React.createElement('div', {
-        className: "value",
+        className: 'value',
         style: valueStyle }),
       React.createElement('div', {
-        className: "handle",
-        ref: "handle",
+        className: 'handle',
+        ref: 'handle',
         onMouseDown: this.handleMounseDown,
         onClick: function (e) {
           e.stopPropagation();
