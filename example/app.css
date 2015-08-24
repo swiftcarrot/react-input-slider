@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  -webkit-user-select: none;
-  user-select: none;
-}
-
 .wrap {
   max-width: 600px;
   margin: 0 auto;
