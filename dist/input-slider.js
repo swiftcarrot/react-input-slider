@@ -115,6 +115,7 @@ module.exports = React.createClass({
   },
 
   handleDrag: function handleDrag(e) {
+    e.preventDefault();
     var rect = this.getDOMNode().getBoundingClientRect();
     var posX = e.clientX + this.start.x - this.offset.x;
     var posY = e.clientY + this.start.y - this.offset.y;

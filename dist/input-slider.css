@@ -3,10 +3,6 @@
   display: inline-block;
   background-color: #dddddd;
   border-radius: 3px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 .u-slider .value {
   position: absolute;
