@@ -26,6 +26,7 @@ var App = React.createClass({
             xmax={100}
             y={this.state.y}
             ymax={100}
+            onDragEnd={this.handleDragEnd}
             onChange={this.handleChange}
           />
         </div>
@@ -38,6 +39,7 @@ var App = React.createClass({
             x={this.state.left}
             xmin={100}
             xmax={360}
+            onDragEnd={this.handleDragEnd}
             onChange={this.handleChangeX}
           />
         </div>
@@ -50,6 +52,7 @@ var App = React.createClass({
             y={this.state.top}
             ymin={100}
             ymax={360}
+            onDragEnd={this.handleDragEnd}
             onChange={this.handleChangeY}
           />
         </div>
@@ -57,20 +60,24 @@ var App = React.createClass({
     );
   },
 
-  handleChange: function(pos) {
+  handleDragEnd(pos) {
+    console.log('handleDragEnd', pos);
+  },
+
+  handleChange(pos) {
     this.setState({
       x: pos.x,
       y: pos.y
     });
   },
 
-  handleChangeX: function(pos) {
+  handleChangeX(pos) {
     this.setState({
       left: pos.x
     });
   },
 
-  handleChangeY: function(pos) {
+  handleChangeY(pos) {
     this.setState({
       top: pos.y
     })

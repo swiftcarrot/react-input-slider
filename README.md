@@ -44,12 +44,14 @@ var App = React.createClass({
 ### Props
 |name |type   | description | default
 |-----|----   | ----------  | -------
-|axis |string | type of slider ('x', 'y', 'xy')| 'x'
+|axis |string | type of slider (`'x'`, `'y'`, `'xy'`)| `'x'`
 |x    |number | value of x  ||
 |xmax |number | max of x    ||
-|xmin |number | min of x    | 0
+|xmin |number | min of x    | `0`
 |y    |number | value of y  ||
 |ymax |number | max of y    ||
-|ymin |number | min of y    | 0
+|ymin |number | min of y    | `0`
+|onChange|function|change callback|`null`
+|onDragEnd|function|dragEnd callback|`null`
 ### License
 MIT
