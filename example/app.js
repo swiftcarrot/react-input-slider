@@ -17,6 +17,7 @@ var App = React.createClass({
     return (
       <div className="wrap">
         <div className="example example-xy">
+          <h3>axis='xy'</h3>
           <div>{'x: ' + this.state.x}</div>
           <div>{'y: ' + this.state.y}</div>
           <InputSlider
@@ -32,6 +33,7 @@ var App = React.createClass({
         </div>
 
         <div className="example example-x">
+          <h3>axis='x'</h3>
           <div>{'x: ' + this.state.left}</div>
           <InputSlider
             className="slider"
@@ -45,6 +47,7 @@ var App = React.createClass({
         </div>
 
         <div className="example example-y">
+          <h3>axis='y'</h3>
           <div>{'y: ' + this.state.top}</div>
           <InputSlider
             className="slider"
