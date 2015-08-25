@@ -70,34 +70,37 @@ module.exports = React.createClass({
     return { top: top, left: left };
   },
 
-  change: function change(pos) {
-    if (this.props.onChange) {
-      var rect = this.getDOMNode().getBoundingClientRect();
-      var width = rect.width;
-      var height = rect.height;
-      var left = pos.left;
-      var top = pos.top;
-      var axis = this.props.axis;
+  change: function change(pos, dragEnd) {
+    if (!this.props.onChange) return;
 
-      if (left < 0) left = 0;
-      if (left > width) left = width;
-      if (top < 0) top = 0;
-      if (top > height) top = height;
+    var rect = this.getDOMNode().getBoundingClientRect();
+    var width = rect.width;
+    var height = rect.height;
+    var left = pos.left;
+    var top = pos.top;
+    var axis = this.props.axis;
 
-      var x = 0;
-      var y = 0;
-      if (axis === 'x' || axis === 'xy') {
-        x = left / width * (this.props.xmax - this.props.xmin) + this.props.xmin;
-      }
-      if (axis === 'y' || axis === 'xy') {
-        y = top / height * (this.props.ymax - this.props.ymin) + this.props.ymin;
-      }
+    if (left < 0) left = 0;
+    if (left > width) left = width;
+    if (top < 0) top = 0;
+    if (top > height) top = height;
 
-      this.props.onChange({ x: x, y: y });
+    var x = 0;
+    var y = 0;
+    if (axis === 'x' || axis === 'xy') {
+      x = left / width * (this.props.xmax - this.props.xmin) + this.props.xmin;
     }
+    if (axis === 'y' || axis === 'xy') {
+      y = top / height * (this.props.ymax - this.props.ymin) + this.props.ymin;
+    }
+
+    this.props.onChange({ x: x, y: y });
+
+    if (this.props.onDragEnd && dragEnd) this.props.onDragEnd({ x: x, y: y });
   },
 
   handleMounseDown: function handleMounseDown(e) {
+    e.preventDefault();
     var dom = this.refs.handle.getDOMNode();
 
     this.start = {
@@ -114,21 +117,28 @@ module.exports = React.createClass({
     document.addEventListener('mouseup', this.handleDragEnd);
   },
 
-  handleDrag: function handleDrag(e) {
-    e.preventDefault();
+  getPos: function getPos(e) {
     var rect = this.getDOMNode().getBoundingClientRect();
     var posX = e.clientX + this.start.x - this.offset.x;
     var posY = e.clientY + this.start.y - this.offset.y;
 
-    this.change({
+    return {
       left: posX,
       top: posY
-    });
+    };
+  },
+
+  handleDrag: function handleDrag(e) {
+    e.preventDefault();
+    this.change(this.getPos(e));
   },
 
   handleDragEnd: function handleDragEnd(e) {
+    e.preventDefault();
     document.removeEventListener('mousemove', this.handleDrag);
     document.removeEventListener('mouseup', this.handleDragEnd);
+
+    if (this.props.onDragEnd) this.change(this.getPos(e), true);
   },
 
   handleClick: function handleClick(e) {
@@ -137,6 +147,6 @@ module.exports = React.createClass({
     this.change({
       left: e.clientX - rect.left,
       top: e.clientY - rect.top
-    });
+    }, true);
   }
 });
