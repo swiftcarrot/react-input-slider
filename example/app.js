@@ -1,6 +1,7 @@
 require('../lib/input-slider.less');
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var InputSlider = require('../lib/input-slider.js');
 
 var App = React.createClass({
@@ -84,4 +85,4 @@ var App = React.createClass({
   }
 });
 
-React.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));

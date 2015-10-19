@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/wangzuo/react-input-slider",
   "peerDependencies": {
-    "react": "^0.13.1"
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   },
   "devDependencies": {
     "babel-core": "^5.4.7",
