@@ -4,6 +4,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var cx = require('classnames');
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 module.exports = React.createClass({
   displayName: 'InputSlider',
@@ -73,7 +74,7 @@ module.exports = React.createClass({
   change: function change(pos, dragEnd) {
     if (!this.props.onChange) return;
 
-    var rect = this.getDOMNode().getBoundingClientRect();
+    var rect = ReactDOM.findDOMNode(this).getBoundingClientRect();
     var width = rect.width;
     var height = rect.height;
     var left = pos.left;
@@ -101,7 +102,7 @@ module.exports = React.createClass({
 
   handleMounseDown: function handleMounseDown(e) {
     e.preventDefault();
-    var dom = this.refs.handle.getDOMNode();
+    var dom = this.refs.handle;
 
     this.start = {
       x: dom.offsetLeft,
@@ -118,7 +119,7 @@ module.exports = React.createClass({
   },
 
   getPos: function getPos(e) {
-    var rect = this.getDOMNode().getBoundingClientRect();
+    var rect = ReactDOM.findDOMNode(this).getBoundingClientRect();
     var posX = e.clientX + this.start.x - this.offset.x;
     var posY = e.clientY + this.start.y - this.offset.y;
 
@@ -142,7 +143,7 @@ module.exports = React.createClass({
   },
 
   handleClick: function handleClick(e) {
-    var rect = this.getDOMNode().getBoundingClientRect();
+    var rect = ReactDOM.findDOMNode(this).getBoundingClientRect();
 
     this.change({
       left: e.clientX - rect.left,
