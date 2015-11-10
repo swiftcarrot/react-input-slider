@@ -26,7 +26,6 @@ module.exports = React.createClass({
       ymin: 0
     };
   },
-
   render: function render() {
     var pos = this.getPosition();
     var axis = this.props.axis;
@@ -46,14 +45,13 @@ module.exports = React.createClass({
         className: 'handle',
         ref: 'handle',
         onMouseDown: this.handleMounseDown,
-        onClick: function (e) {
+        onClick: function onClick(e) {
           e.stopPropagation();
           e.nativeEvent.stopImmediatePropagation();
         },
         style: pos })
     );
   },
-
   getPosition: function getPosition() {
     var top = (this.props.y - this.props.ymin) / (this.props.ymax - this.props.ymin) * 100;
     var left = (this.props.x - this.props.xmin) / (this.props.xmax - this.props.xmin) * 100;
@@ -70,7 +68,6 @@ module.exports = React.createClass({
 
     return { top: top, left: left };
   },
-
   change: function change(pos, dragEnd) {
     if (!this.props.onChange) return;
 
@@ -99,7 +96,6 @@ module.exports = React.createClass({
 
     if (this.props.onDragEnd && dragEnd) this.props.onDragEnd({ x: x, y: y });
   },
-
   handleMounseDown: function handleMounseDown(e) {
     e.preventDefault();
     var dom = this.refs.handle;
@@ -117,7 +113,6 @@ module.exports = React.createClass({
     document.addEventListener('mousemove', this.handleDrag);
     document.addEventListener('mouseup', this.handleDragEnd);
   },
-
   getPos: function getPos(e) {
     var rect = ReactDOM.findDOMNode(this).getBoundingClientRect();
     var posX = e.clientX + this.start.x - this.offset.x;
@@ -128,12 +123,10 @@ module.exports = React.createClass({
       top: posY
     };
   },
-
   handleDrag: function handleDrag(e) {
     e.preventDefault();
     this.change(this.getPos(e));
   },
-
   handleDragEnd: function handleDragEnd(e) {
     e.preventDefault();
     document.removeEventListener('mousemove', this.handleDrag);
@@ -141,7 +134,6 @@ module.exports = React.createClass({
 
     if (this.props.onDragEnd) this.change(this.getPos(e), true);
   },
-
   handleClick: function handleClick(e) {
     var rect = ReactDOM.findDOMNode(this).getBoundingClientRect();
 
