@@ -3,6 +3,7 @@
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var cx = require('classnames');
+var blacklist = require('blacklist');
 var React = require('react');
 var ReactDOM = require('react-dom');
 
@@ -27,17 +28,18 @@ module.exports = React.createClass({
     };
   },
   render: function render() {
-    var pos = this.getPosition();
     var axis = this.props.axis;
+    var props = blacklist(this.props, 'axis', 'x', 'y', 'xmin', 'xmax', 'ymin', 'ymax', 'onChange', 'onDragEnd', 'className', 'onClick');
+    var pos = this.getPosition();
     var valueStyle = {};
     if (axis === 'x') valueStyle.width = pos.left;
     if (axis === 'y') valueStyle.height = pos.top;
 
+    props.className = cx('u-slider', 'u-slider-' + axis, this.props.className);
+
     return React.createElement(
       'div',
-      _extends({}, this.props, {
-        className: cx('u-slider', 'u-slider-' + axis, this.props.className),
-        onClick: this.handleClick }),
+      _extends({}, props, { onClick: this.handleClick }),
       React.createElement('div', {
         className: 'value',
         style: valueStyle }),
