@@ -64,8 +64,8 @@ var App = React.createClass({
     );
   },
 
-  handleDragEnd(pos) {
-    console.log('handleDragEnd', pos);
+  handleDragEnd() {
+    console.log('handleDragEnd');
   },
 
   handleChange(pos) {
