@@ -1,7 +1,7 @@
 all:
 	babel lib --out-dir dist
-	lessc lib/input-slider.less > dist/input-slider.css
-	webpack -p
+	./node_modules/.bin/lessc lib/input-slider.less > dist/input-slider.css
+	./node_modules/.bin/webpack -p
 clean:
 	rm dist/*
 	rm example/bundle*

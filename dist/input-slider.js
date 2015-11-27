@@ -44,13 +44,29 @@ module.exports = React.createClass({
       React.createElement('div', {
         className: 'handle',
         ref: 'handle',
-        onMouseDown: this.handleMounseDown,
+        onTouchStart: this.handleMouseDown,
+        onMouseDown: this.handleMouseDown,
         onClick: function onClick(e) {
           e.stopPropagation();
           e.nativeEvent.stopImmediatePropagation();
         },
         style: pos })
     );
+  },
+  getClientPosition: function getClientPosition(e) {
+    var touches = e.touches;
+    if (touches && touches.length) {
+      var finger = touches[0];
+      return {
+        x: finger.clientX,
+        y: finger.clientY
+      };
+    }
+
+    return {
+      x: e.clientX,
+      y: e.clientY
+    };
   },
   getPosition: function getPosition() {
     var top = (this.props.y - this.props.ymin) / (this.props.ymax - this.props.ymin) * 100;
@@ -93,12 +109,11 @@ module.exports = React.createClass({
     }
 
     this.props.onChange({ x: x, y: y });
-
-    if (this.props.onDragEnd && dragEnd) this.props.onDragEnd({ x: x, y: y });
   },
-  handleMounseDown: function handleMounseDown(e) {
+  handleMouseDown: function handleMouseDown(e) {
     e.preventDefault();
     var dom = this.refs.handle;
+    var clientPos = this.getClientPosition(e);
 
     this.start = {
       x: dom.offsetLeft,
@@ -106,17 +121,22 @@ module.exports = React.createClass({
     };
 
     this.offset = {
-      x: e.clientX,
-      y: e.clientY
+      x: clientPos.x,
+      y: clientPos.y
     };
 
     document.addEventListener('mousemove', this.handleDrag);
     document.addEventListener('mouseup', this.handleDragEnd);
+
+    document.addEventListener('touchmove', this.handleDrag);
+    document.addEventListener('touchend', this.handleDragEnd);
+    document.addEventListener('touchcancel', this.handleDragEnd);
   },
   getPos: function getPos(e) {
+    var clientPos = this.getClientPosition(e);
     var rect = ReactDOM.findDOMNode(this).getBoundingClientRect();
-    var posX = e.clientX + this.start.x - this.offset.x;
-    var posY = e.clientY + this.start.y - this.offset.y;
+    var posX = clientPos.x + this.start.x - this.offset.x;
+    var posY = clientPos.y + this.start.y - this.offset.y;
 
     return {
       left: posX,
@@ -132,14 +152,21 @@ module.exports = React.createClass({
     document.removeEventListener('mousemove', this.handleDrag);
     document.removeEventListener('mouseup', this.handleDragEnd);
 
-    if (this.props.onDragEnd) this.change(this.getPos(e), true);
+    document.removeEventListener('touchmove', this.handleDrag);
+    document.removeEventListener('touchend', this.handleDragEnd);
+    document.removeEventListener('touchcancel', this.handleDragEnd);
+
+    if (this.props.onDragEnd) {
+      this.props.onDragEnd();
+    }
   },
   handleClick: function handleClick(e) {
+    var clientPos = this.getClientPosition(e);
     var rect = ReactDOM.findDOMNode(this).getBoundingClientRect();
 
     this.change({
-      left: e.clientX - rect.left,
-      top: e.clientY - rect.top
+      left: clientPos.x - rect.left,
+      top: clientPos.y - rect.top
     }, true);
   }
 });
