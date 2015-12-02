@@ -5,7 +5,7 @@ React input slider component
 npm install react-input-slider --save
 ```
 ### Demo
-[https://wangzuo.github.io/react-input-slider/example](https://wangzuo.github.io/react-input-slider/example)
+[https://wangzuo.github.io/react-input-slider](https://wangzuo.github.io/react-input-slider)
 ### Usage
 ``` javascript
 var React = require('react');
