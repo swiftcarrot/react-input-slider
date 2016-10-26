@@ -42,7 +42,7 @@
     "less": "^2.4.0",
     "node-libs-browser": "^0.5.2",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.3"
+    "webpack": "^1.13.3"
   },
   "dependencies": {
     "blacklist": "^1.1.2",
