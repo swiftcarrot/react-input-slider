@@ -39,8 +39,8 @@
     "babel-preset-react": "^6.1.2",
     "css-loader": "^0.22.0",
     "github-pages-deploy": "0.0.3",
-    "less": "^2.4.0",
-    "node-libs-browser": "^0.5.2",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.3"
   },
