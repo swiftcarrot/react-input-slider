@@ -43,7 +43,7 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.3"
+    "webpack": "^1.13.3"
   },
   "dependencies": {
     "blacklist": "^1.1.2",
