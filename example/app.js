@@ -2,17 +2,20 @@ require('../lib/input-slider.less');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var bindAll = require('lodash/bindAll');
 var InputSlider = require('../lib/input-slider.js');
 
-var App = React.createClass({
-  getInitialState() {
-    return {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    bindAll(this, [ 'handleChangeY', 'handleChangeX', 'handleChange' ])
+    this.state = {
       x: 21,
       y: 73,
       left: 120,
       top: 120
     };
-  },
+  }
 
   render() {
     return (
@@ -62,30 +65,30 @@ var App = React.createClass({
         </div>
       </div>
     );
-  },
+  }
 
   handleDragEnd() {
     console.log('handleDragEnd');
-  },
+  }
 
   handleChange(pos) {
     this.setState({
       x: pos.x,
       y: pos.y
     });
-  },
+  }
 
   handleChangeX(pos) {
     this.setState({
       left: pos.x
     });
-  },
+  }
 
   handleChangeY(pos) {
     this.setState({
       top: pos.y
     })
   }
-});
+};
 
 ReactDOM.render(<App/>, document.getElementById('app'));
