@@ -1,29 +1,33 @@
 # react-input-slider
+![https://www.npmjs.com/package/react-input-slider](https://img.shields.io/npm/v/react-input-slider.svg)
+![https://www.npmjs.com/package/react-input-slider](https://img.shields.io/npm/dm/react-input-slider.svg)
+
 React input slider component
+
 ### Installation
 ``` sh
 npm install react-input-slider --save
 ```
+
 ### Demo
 [https://wangzuo.github.io/react-input-slider](https://wangzuo.github.io/react-input-slider)
+
 ### Usage
 ``` javascript
-var React = require('react');
-var InputSlider = require('react-input-slider');
+import React from 'react';
+import InputSlider from 'react-input-slider';
 
-var App = React.createClass({
-  getInitialState() {
-    return {
-      x: 10,
-      y: 10
-    };
-  },
+class App extends React.Component {
+  state = {
+    x: 10,
+    y: 10
+  };
 
   render() {
     return (
       <InputSlider
         className="slider slider-xy"
-        axis='xy'
+        axis="xy"
         x={this.state.x}
         xmax={100}
         y={this.state.y}
@@ -31,15 +35,15 @@ var App = React.createClass({
         onChange={this.handleChange}
       />
     );
-  },
+  }
 
-  handleChange(pos) {
+  handleChange = pos => {
     this.setState({
       x: pos.x,
       y: pos.y
     });
-  }
-});
+  };
+}
 ```
 ### Props
 |name |type   | description | default
@@ -53,5 +57,6 @@ var App = React.createClass({
 |ymin |number | min of y    | `0`
 |onChange|function|change callback|`null`
 |onDragEnd|function|dragEnd callback|`null`
+
 ### License
 MIT
