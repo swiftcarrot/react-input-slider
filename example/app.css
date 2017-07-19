@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -8,6 +10,11 @@
   max-width: 600px;
   margin: 0 auto;
   margin-top: 20px;
+}
+
+.version {
+  color: #999;
+  font-size: 18px;
 }
 
 .example {
@@ -20,7 +27,7 @@
 }
 
 .example-x .slider {
-  width: 300px;;
+  width: 300px;
 }
 
 .example-y .slider {
