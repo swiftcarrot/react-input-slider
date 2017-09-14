@@ -1,1 +1,4 @@
 example
+yarn.lock
+lib
+.publish
