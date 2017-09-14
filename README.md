@@ -1,6 +1,6 @@
 # react-input-slider
-![https://www.npmjs.com/package/react-input-slider](https://img.shields.io/npm/v/react-input-slider.svg)
-![https://www.npmjs.com/package/react-input-slider](https://img.shields.io/npm/dm/react-input-slider.svg)
+[![npm](https://img.shields.io/npm/v/react-input-slider.svg)](https://www.npmjs.com/package/react-input-slider)
+[![npm](https://img.shields.io/npm/dm/react-input-slider.svg)](https://www.npmjs.com/package/react-input-slider)
 
 React input slider component
 
