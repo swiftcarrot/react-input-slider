@@ -16,18 +16,14 @@ class App extends Component {
     return (
       <div className="app">
         <h1>
-          react-input-slider{' '}
+          react-input-slider
           <span className="version">{packageJSON.version}</span>
         </h1>
         <div className="wrap">
           <div className="example example-xy">
-            <h3>axis='xy'</h3>
-            <div>
-              {'x: ' + this.state.x}
-            </div>
-            <div>
-              {'y: ' + this.state.y}
-            </div>
+            <h3>axis='xy', xmax=100, ymax=100</h3>
+            <div>{'x: ' + this.state.x}</div>
+            <div>{'y: ' + this.state.y}</div>
             <InputSlider
               className="slider"
               axis="xy"
@@ -41,26 +37,23 @@ class App extends Component {
           </div>
 
           <div className="example example-x">
-            <h3>axis='x'</h3>
-            <div>
-              {'x: ' + this.state.left}
-            </div>
+            <h3>axis='x', xstep=10, xmin=100, xmax=360</h3>
+            <div>{'x: ' + this.state.left}</div>
             <InputSlider
               className="slider"
               axis="x"
               x={this.state.left}
               xmin={100}
               xmax={360}
+              xstep={10}
               onDragEnd={this.handleDragEnd}
               onChange={this.handleChangeX}
             />
           </div>
 
           <div className="example example-y">
-            <h3>axis='y'</h3>
-            <div>
-              {'y: ' + this.state.top}
-            </div>
+            <h3>axis='y', ymin=100, ymax=360</h3>
+            <div>{'y: ' + this.state.top}</div>
             <InputSlider
               className="slider"
               axis="y"

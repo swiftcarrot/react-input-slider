@@ -55,6 +55,8 @@ class App extends React.Component {
 |y    |number | value of y  ||
 |ymax |number | max of y    ||
 |ymin |number | min of y    | `0`
+|xstep|number | step of x    | `1`
+|ystep|number | step of y    | `1`
 |onChange|function|change callback|`null`
 |onDragEnd|function|dragEnd callback|`null`
 
