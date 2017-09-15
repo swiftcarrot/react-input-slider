@@ -37,19 +37,29 @@ class App extends Component {
           </div>
 
           <div className="example example-x">
-            <h3>axis='x', xstep=10, xmin=100, xmax=360</h3>
+            <h3>axis='x', xstep=10, xmin=100, xmax=355</h3>
             <div>{'x: ' + this.state.left}</div>
             <InputSlider
               className="slider"
               axis="x"
               x={this.state.left}
               xmin={100}
-              xmax={360}
+              xmax={355}
               xstep={10}
               onDragEnd={this.handleDragEnd}
               onChange={this.handleChangeX}
             />
           </div>
+
+          <h3>&lt;input type="range" min="100" max="355" step="10"&gt;</h3>
+          <input
+            type="range"
+            min="100"
+            max="355"
+            step="10"
+            value={this.state.left}
+            onChange={this.handleRangeChange}
+          />
 
           <div className="example example-y">
             <h3>axis='y', ymin=100, ymax=360</h3>
@@ -89,6 +99,12 @@ class App extends Component {
   handleChangeY = pos => {
     this.setState({
       top: pos.y
+    });
+  };
+
+  handleRangeChange = e => {
+    this.setState({
+      left: parseInt(e.target.value, 10)
     });
   };
 }
