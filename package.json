@@ -7,7 +7,8 @@
     "start": "webpack-dev-server -c --port=8080",
     "build": "make",
     "deploy": "npm run build && github-pages-deploy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build"
   },
   "github-pages-deploy": {
     "src": "example"
