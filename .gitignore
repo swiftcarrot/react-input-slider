@@ -1,4 +1,3 @@
-node_modules
-example/bundle*
-.publish
 dist
+coverage
+node_modules

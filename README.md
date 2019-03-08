@@ -2,69 +2,68 @@
 
 [![npm](https://img.shields.io/npm/v/react-input-slider.svg)](https://www.npmjs.com/package/react-input-slider)
 [![npm](https://img.shields.io/npm/dm/react-input-slider.svg)](https://www.npmjs.com/package/react-input-slider)
+[![Build Status](https://travis-ci.org/wangzuo/react-input-slider.svg?branch=master)](https://travis-ci.org/wangzuo/react-input-slider)
+[![codecov](https://codecov.io/gh/wangzuo/react-input-slider/branch/master/graph/badge.svg)](https://codecov.io/gh/wangzuo/react-input-slider)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-React input slider component
+React slider component
 
 ### Installation
 
 ```sh
+yarn add react-input-slider
 npm install react-input-slider --save
 ```
 
 ### Demo
 
-[https://wangzuo.github.io/react-input-slider](https://wangzuo.github.io/react-input-slider)
+[https://code.swiftcarrot.com/react-input-slider](https://code.swiftcarrot.com/react-input-slider)
 
 ### Usage
 
 ```javascript
 import React from 'react';
-import InputSlider from 'react-input-slider';
+import Slider from 'react-input-slider';
 
-class App extends React.Component {
-  state = {
-    x: 10,
-    y: 10
-  };
+function App() {
+  const [state, setState] = useState({ x: 10, y: 10 });
 
-  render() {
-    return (
-      <InputSlider
-        className="slider slider-xy"
-        axis="xy"
-        x={this.state.x}
-        xmax={100}
-        y={this.state.y}
-        ymax={100}
-        onChange={this.handleChange}
-      />
-    );
-  }
-
-  handleChange = pos => {
-    this.setState({
-      x: pos.x,
-      y: pos.y
-    });
-  };
+  return (
+    <Slider
+      axis="xy"
+      x={state.x}
+      y={state.y}
+      xmax={100}
+      ymax={100}
+      onChange={setState}
+    />
+  );
 }
+```
+
+### Styling
+
+v5 introduces a new styling api powered by [emotion](https://emotion.sh/)
+
+```javascript
+<Slider styles={{}} />
 ```
 
 ### Props
 
-| name      | type     | description                           | default |
+| Name      | Type     | Description                           | Default |
 | --------- | -------- | ------------------------------------- | ------- |
 | axis      | string   | type of slider (`'x'`, `'y'`, `'xy'`) | `'x'`   |
-| x         | number   | value of x                            |         |
-| xmax      | number   | max of x                              |         |
+| x         | number   | value of x                            | `50`    |
+| xmax      | number   | max of x                              | `100`   |
 | xmin      | number   | min of x                              | `0`     |
-| y         | number   | value of y                            |         |
-| ymax      | number   | max of y                              |         |
+| y         | number   | value of y                            | `50`    |
+| ymax      | number   | max of y                              | `100`   |
 | ymin      | number   | min of y                              | `0`     |
 | xstep     | number   | step of x                             | `1`     |
 | ystep     | number   | step of y                             | `1`     |
-| onChange  | function | change callback                       | `null`  |
-| onDragEnd | function | dragEnd callback                      | `null`  |
+| onChange  | function | handleChange                          | `null`  |
+| onDragEnd | function | handleDragEnd                         | `null`  |
 
 ### License
 
