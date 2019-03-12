@@ -29,14 +29,16 @@ function App() {
   const [state, setState] = useState({ x: 10, y: 10 });
 
   return (
-    <Slider
-      axis="xy"
-      x={state.x}
-      y={state.y}
-      xmax={100}
-      ymax={100}
-      onChange={setState}
-    />
+    <div>
+      ({state.x}, {state.y})
+      <Slider axis="xy" x={state.x} y={state.y} onChange={setState} />
+      <Slider
+        axis="x"
+        x={state.x}
+        onChange={({ x }) => setState(state => ({ ...state, x }))}
+      />
+      <Slider axis="y" y={state.y} onChange={({ y }) => setState(state => ({ ...state, y }))} />
+    </div>
   );
 }
 ```
