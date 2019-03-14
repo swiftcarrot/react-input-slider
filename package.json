@@ -1,6 +1,6 @@
 {
   "name": "react-input-slider",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "dist"
   ],
   "author": "Wang Zuo <wzuoadjusted@gmail.com> (https://wangzuo.me/)",
+  "homepage": "https://code.swiftcarrot.com/react-input-slider",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
