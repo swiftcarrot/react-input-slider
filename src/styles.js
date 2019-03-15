@@ -2,13 +2,17 @@ const track = {
   position: 'relative',
   display: 'inline-block',
   backgroundColor: '#ddd',
-  borderRadius: 5
+  borderRadius: 5,
+  userSelect: 'none',
+  boxSizing: 'border-box'
 };
 
 const active = {
   position: 'absolute',
   backgroundColor: '#5e72e4',
-  borderRadius: 5
+  borderRadius: 5,
+  userSelect: 'none',
+  boxSizing: 'border-box'
 };
 
 const thumb = {
@@ -19,7 +23,9 @@ const thumb = {
   height: 18,
   backgroundColor: '#fff',
   borderRadius: '50%',
-  boxShadow: '0 1px 1px rgba(0,0,0,.5)'
+  boxShadow: '0 1px 1px rgba(0,0,0,.5)',
+  userSelect: 'none',
+  boxSizing: 'border-box'
 };
 
 const styles = {
@@ -37,12 +43,7 @@ const styles = {
     },
 
     thumb: {
-      position: 'absolute',
-      '&:after': {
-        ...thumb,
-        top: -4,
-        left: -thumb.width / 2
-      }
+      ...thumb
     }
   },
 
@@ -60,12 +61,7 @@ const styles = {
     },
 
     thumb: {
-      position: 'absolute',
-      '&:after': {
-        ...thumb,
-        top: -thumb.height / 2,
-        left: -4
-      }
+      ...thumb
     }
   },
 
@@ -82,12 +78,7 @@ const styles = {
     active: {},
 
     thumb: {
-      position: 'absolute',
-      '&::after': {
-        ...thumb,
-        top: -thumb.width / 2,
-        left: -thumb.height / 2
-      }
+      ...thumb
     }
   }
 };

@@ -6,11 +6,11 @@ test('x', () => {
   const component = renderer.create(<Slider />);
   expect(component.toJSON()).toMatchInlineSnapshot(`
 <div
-  className="css-qt4p17-Slider"
+  className="css-1ik466l-Slider"
   onClick={[Function]}
 >
   <div
-    className="css-1nz8439-Slider"
+    className="css-z9sd19-Slider"
     style={
       Object {
         "width": "50%",
@@ -18,7 +18,7 @@ test('x', () => {
     }
   />
   <div
-    className="css-13grdxx-Slider"
+    className="css-qnlffc-Slider"
     onClick={[Function]}
     onMouseDown={[Function]}
     onTouchStart={[Function]}
@@ -37,11 +37,11 @@ test('y', () => {
   const component = renderer.create(<Slider axis="y" />);
   expect(component.toJSON()).toMatchInlineSnapshot(`
 <div
-  className="css-1opy2ua-Slider"
+  className="css-16kwc1d-Slider"
   onClick={[Function]}
 >
   <div
-    className="css-5yhtds-Slider"
+    className="css-i5fopb-Slider"
     style={
       Object {
         "height": "50%",
@@ -49,7 +49,7 @@ test('y', () => {
     }
   />
   <div
-    className="css-1j763rc-Slider"
+    className="css-ftafac-Slider"
     onClick={[Function]}
     onMouseDown={[Function]}
     onTouchStart={[Function]}
@@ -76,7 +76,7 @@ test('xy', () => {
     style={Object {}}
   />
   <div
-    className="css-1l5zdlt-Slider"
+    className="css-fo2pii-Slider"
     onClick={[Function]}
     onMouseDown={[Function]}
     onTouchStart={[Function]}

@@ -1,6 +1,6 @@
 {
   "name": "react-input-slider",
-  "version": "5.0.1",
+  "version": "5.0.3",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "scripts": {
@@ -20,9 +20,9 @@
     "@emotion/core": "^10.0.9"
   },
   "devDependencies": {
-    "babel-jest": "^24.4.0",
-    "babel-preset-zkit": "^0.2.4",
-    "jest": "^24.4.0",
+    "babel-jest": "^24.5.0",
+    "babel-preset-zkit": "^0.3.1",
+    "jest": "^24.5.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-test-renderer": "^16.6.3",

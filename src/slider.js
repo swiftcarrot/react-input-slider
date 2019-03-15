@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core';
 import { useRef } from 'react';
 import { getClientPosition } from './utils';
-import styles from './styles';
+import defaultStyles from './styles';
 
 const Slider = ({
   theme,
@@ -18,6 +18,7 @@ const Slider = ({
   onChange,
   onDragEnd,
   onClick,
+  styles: customStyles,
   ...props
 }) => {
   const container = useRef(null);
@@ -133,21 +134,36 @@ const Slider = ({
 
   const pos = getPosition();
   const valueStyle = {};
-
   if (axis === 'x') valueStyle.width = pos.left;
   if (axis === 'y') valueStyle.height = pos.top;
 
+  const styles = {
+    track: { ...defaultStyles[axis].track, ...customStyles.track },
+    active: { ...defaultStyles[axis].active, ...customStyles.active },
+    thumb: { ...defaultStyles[axis].thumb, ...customStyles.thumb }
+  };
+
+  styles.thumb = {
+    position: 'absolute',
+    '&:after': {
+      ...styles.thumb,
+      top:
+        axis === 'x'
+          ? (styles.track.height - styles.thumb.height) / 2
+          : -styles.thumb.width / 2,
+      left:
+        axis === 'y'
+          ? (styles.track.width - styles.thumb.width) / 2
+          : -styles.thumb.width / 2
+    }
+  };
+
   return (
-    <div
-      {...props}
-      ref={container}
-      css={styles[axis].track}
-      onClick={handleClick}
-    >
-      <div css={styles[axis].active} style={valueStyle} />
+    <div {...props} ref={container} css={styles.track} onClick={handleClick}>
+      <div css={styles.active} style={valueStyle} />
       <div
         ref={handle}
-        css={styles[axis].thumb}
+        css={styles.thumb}
         style={pos}
         onTouchStart={handleMouseDown}
         onMouseDown={handleMouseDown}
@@ -169,7 +185,8 @@ Slider.defaultProps = {
   ymin: 0,
   ymax: 100,
   xstep: 1,
-  ystep: 1
+  ystep: 1,
+  styles: {}
 };
 
 export default Slider;

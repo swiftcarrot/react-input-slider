@@ -48,7 +48,20 @@ function App() {
 v5 introduces a new styling api powered by [emotion](https://emotion.sh/)
 
 ```javascript
-<Slider styles={{}} />
+<Slider
+  styles={{
+    track: {
+      backgroundColor: 'blue'
+    },
+    active: {
+      backgroundColor: 'red'
+    },
+    thumb: {
+      width: 50,
+      height: 50
+    }
+  }}
+/>
 ```
 
 ### Props
