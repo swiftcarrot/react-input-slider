@@ -1248,10 +1248,10 @@ babel-preset-jest@^24.3.0:
     "@babel/plugin-syntax-object-rest-spread" "^7.0.0"
     babel-plugin-jest-hoist "^24.3.0"
 
-babel-preset-zkit@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/babel-preset-zkit/-/babel-preset-zkit-0.3.1.tgz#18d21a395fb10a8b983c87d79cce36eb21213dd5"
-  integrity sha512-KECIXI2ec1JtWmCNMe3eEi8rBaeytjqwSe4Aui085FvXf8/THfkrXzcvc+RbMar3nkQ4TLKxn0RDuhg6j/3s6w==
+babel-preset-zkit@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-zkit/-/babel-preset-zkit-0.4.0.tgz#e8f60c1a265c22f0fb85a1feaa4dfcbc1a081143"
+  integrity sha512-2YZSNyj5MImQIqsdXeWfRM25e1z80nYQ6NgezesA3vGc/DRMmR3mfk2DOyuxbSVgoSse3YkT3o5PAyISZQqqAQ==
   dependencies:
     "@babel/core" "^7.3.4"
     "@babel/plugin-proposal-class-properties" "^7.3.4"
