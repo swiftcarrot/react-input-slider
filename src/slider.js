@@ -150,7 +150,7 @@ const Slider = ({
       top:
         axis === 'x'
           ? (styles.track.height - styles.thumb.height) / 2
-          : -styles.thumb.width / 2,
+          : -styles.thumb.height / 2,
       left:
         axis === 'y'
           ? (styles.track.width - styles.thumb.width) / 2
