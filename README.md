@@ -17,7 +17,7 @@ npm install react-input-slider --save
 
 ### Demo
 
-[https://code.swiftcarrot.com/react-input-slider](https://code.swiftcarrot.com/react-input-slider)
+[https://swiftcarrot.dev/react-input-slider](https://swiftcarrot.dev/react-input-slider)
 
 ### Usage
 
