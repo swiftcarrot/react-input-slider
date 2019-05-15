@@ -1,6 +1,6 @@
 {
   "name": "react-input-slider",
-  "version": "5.0.9",
+  "version": "5.0.12",
   "description": "React input slider component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -31,20 +31,20 @@
   "homepage": "https://swiftcarrot.dev/react-input-slider",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
-    "@emotion/core": "^10.0.9"
+    "@babel/runtime": "^7.4.4",
+    "@emotion/core": "^10.0.10"
   },
   "devDependencies": {
-    "babel-jest": "^24.5.0",
-    "babel-preset-zkit": "^0.4.0",
-    "jest": "^24.5.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-test-renderer": "^16.6.3",
-    "rollup": "^1.6.0",
+    "babel-jest": "^24.8.0",
+    "babel-preset-swiftcarrot": "^0.6.1",
+    "jest": "^24.8.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "rollup": "^1.11.3",
     "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.1"
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3"
   },
   "peerDependencies": {
     "react": "^16.8.4",
