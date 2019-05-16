@@ -2,8 +2,8 @@
 
 [![npm](https://img.shields.io/npm/v/react-input-slider.svg)](https://www.npmjs.com/package/react-input-slider)
 [![npm](https://img.shields.io/npm/dm/react-input-slider.svg)](https://www.npmjs.com/package/react-input-slider)
-[![Build Status](https://travis-ci.org/wangzuo/react-input-slider.svg?branch=master)](https://travis-ci.org/wangzuo/react-input-slider)
-[![codecov](https://codecov.io/gh/wangzuo/react-input-slider/branch/master/graph/badge.svg)](https://codecov.io/gh/wangzuo/react-input-slider)
+[![Build Status](https://travis-ci.org/swiftcarrot/react-input-slider.svg?branch=master)](https://travis-ci.org/swiftcarrot/react-input-slider)
+[![codecov](https://codecov.io/gh/swiftcarrot/react-input-slider/branch/master/graph/badge.svg)](https://codecov.io/gh/swiftcarrot/react-input-slider)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 React slider component
