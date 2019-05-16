@@ -1435,10 +1435,10 @@ babel-preset-jest@^24.6.0:
     "@babel/plugin-syntax-object-rest-spread" "^7.0.0"
     babel-plugin-jest-hoist "^24.6.0"
 
-babel-preset-swiftcarrot@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/babel-preset-swiftcarrot/-/babel-preset-swiftcarrot-0.6.1.tgz#e4c8a5341e6133371a0e354fccfa31618fe06e0d"
-  integrity sha512-4N18TtATFAxvDOjfNXk6Iee9u9yXzCM86AD8hzdt6hI8N3P0mKp2ZjdSqPg5QesTtqBzke2m66OIUqXQRP6FzA==
+babel-preset-swiftcarrot@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/babel-preset-swiftcarrot/-/babel-preset-swiftcarrot-0.6.2.tgz#d4479222a5f12ea4624657efe157f30413f2067e"
+  integrity sha512-qlK8c2a0Cey6CXOrSbXSDg7WaqySGle8NNy/EBq2PMIavVtoF+K8TTG5rNIbcl5gRqzv8i1fsTo0pW4JJ1ddVw==
   dependencies:
     "@babel/core" "^7.4.4"
     "@babel/plugin-proposal-class-properties" "^7.4.4"
