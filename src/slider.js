@@ -102,11 +102,15 @@ const Slider = ({
   }
 
   function handleDrag(e) {
+    if (disabled) return;
+
     e.preventDefault();
     change(getPos(e));
   }
 
   function handleDragEnd(e) {
+    if (disabled) return;
+
     e.preventDefault();
     document.removeEventListener('mousemove', handleDrag);
     document.removeEventListener('mouseup', handleDragEnd);
@@ -123,6 +127,8 @@ const Slider = ({
   }
 
   function handleClick(e) {
+    if (disabled) return;
+
     const clientPos = getClientPosition(e);
     const rect = container.current.getBoundingClientRect();
 
