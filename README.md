@@ -59,6 +59,9 @@ v5 introduces a new styling api powered by [emotion](https://emotion.sh/)
     thumb: {
       width: 50,
       height: 50
+    },
+    disabled: {
+      opacity: 0.5
     }
   }}
 />
@@ -79,6 +82,7 @@ v5 introduces a new styling api powered by [emotion](https://emotion.sh/)
 | ystep     | number   | step of y                             | `1`     |
 | onChange  | function | handleChange                          | `null`  |
 | onDragEnd | function | handleDragEnd                         | `null`  |
+| disabled  | boolean  | input disabled                        | false   |
 
 ### License
 
