@@ -80,6 +80,10 @@ const styles = {
     thumb: {
       ...thumb
     }
+  },
+
+  disabled: {
+    opacity: 0.5
   }
 };
 

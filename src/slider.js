@@ -5,7 +5,7 @@ import { getClientPosition } from './utils';
 import defaultStyles from './styles';
 
 const Slider = ({
-  theme,
+  disabled,
   axis,
   x,
   y,
@@ -70,6 +70,8 @@ const Slider = ({
   }
 
   function handleMouseDown(e) {
+    if (disabled) return;
+
     e.preventDefault();
     const dom = handle.current;
     const clientPos = getClientPosition(e);
@@ -140,7 +142,8 @@ const Slider = ({
   const styles = {
     track: { ...defaultStyles[axis].track, ...customStyles.track },
     active: { ...defaultStyles[axis].active, ...customStyles.active },
-    thumb: { ...defaultStyles[axis].thumb, ...customStyles.thumb }
+    thumb: { ...defaultStyles[axis].thumb, ...customStyles.thumb },
+    disabled: { ...defaultStyles.disabled, ...customStyles.disabled }
   };
 
   styles.thumb = {
@@ -159,7 +162,12 @@ const Slider = ({
   };
 
   return (
-    <div {...props} ref={container} css={styles.track} onClick={handleClick}>
+    <div
+      {...props}
+      ref={container}
+      css={[styles.track, disabled && styles.disabled]}
+      onClick={handleClick}
+    >
       <div css={styles.active} style={valueStyle} />
       <div
         ref={handle}
@@ -177,6 +185,7 @@ const Slider = ({
 };
 
 Slider.defaultProps = {
+  disabled: false,
   axis: 'x',
   x: 50,
   xmin: 0,
