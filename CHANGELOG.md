@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [5.1.0]
 
+### Added
+
 - add `props.disabled` and `styles.disabled` support
 
 ## [5.0.7]
