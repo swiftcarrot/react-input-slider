@@ -27,7 +27,7 @@
   "files": [
     "dist"
   ],
-  "author": "Wang Zuo <wzuoadjusted@gmail.com> (https://wangzuo.me/)",
+  "author": "Wang Zuo <wangzuo@swiftcarrot.com> (https://swiftcarrot.com)",
   "homepage": "https://swiftcarrot.dev/react-input-slider",
   "license": "MIT",
   "dependencies": {
