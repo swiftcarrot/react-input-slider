@@ -1,6 +1,6 @@
 {
   "name": "react-input-slider",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "description": "React input slider component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
