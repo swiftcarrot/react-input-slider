@@ -16,6 +16,7 @@ const Slider = ({
   xstep,
   ystep,
   onChange,
+  onDragStart,
   onDragEnd,
   onClick,
   styles: customStyles,
@@ -91,6 +92,10 @@ const Slider = ({
     document.addEventListener('touchmove', handleDrag, { passive: false });
     document.addEventListener('touchend', handleDragEnd);
     document.addEventListener('touchcancel', handleDragEnd);
+
+    if (onDragStart) {
+      onDragStart(e)
+    }
   }
 
   function getPos(e) {
