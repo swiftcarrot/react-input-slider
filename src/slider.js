@@ -94,7 +94,7 @@ const Slider = ({
     document.addEventListener('touchcancel', handleDragEnd);
 
     if (onDragStart) {
-      onDragStart(e)
+      onDragStart(e);
     }
   }
 
@@ -127,7 +127,7 @@ const Slider = ({
     document.removeEventListener('touchcancel', handleDragEnd);
 
     if (onDragEnd) {
-      onDragEnd();
+      onDragEnd(e);
     }
   }
 

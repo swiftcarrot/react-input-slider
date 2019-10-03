@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.1.3]
+
+### Added
+
+- add `props.dragStart` support
+
+## [5.1.2]
+
+## [5.1.1]
+
+### Fixed
+
+- event disabled fix
+
 ## [5.1.0]
 
 ### Added
