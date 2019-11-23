@@ -2,6 +2,7 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import pkg from './package.json';
+import copy from 'rollup-plugin-copy'
 
 const input = './src/index.js';
 const external = id => !id.startsWith('.') && !id.startsWith('/');
@@ -37,7 +38,12 @@ export default [
         plugins: [['@babel/transform-runtime', { useESModules: true }]]
       }),
       nodeResolve(),
-      commonjs()
+      commonjs(),
+          copy({
+      targets: [
+        { src: 'src/index.d.ts', dest: 'dist' },
+      ]
+    })
     ]
   }
 ];
