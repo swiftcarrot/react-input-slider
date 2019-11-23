@@ -1,4 +1,5 @@
-import { Interpolation } from 'emotion';
+import * as React from 'react';
+import { Interpolation } from '@emotion/serialize';
 
 interface SliderProps {
   axis?: 'x' | 'y' | 'xy';
@@ -22,4 +23,4 @@ interface SliderProps {
   };
 }
 
-export default class Slider extends Component<SliderProps> {}
+export default class Slider extends React.Component<SliderProps> {}
