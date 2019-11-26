@@ -8,7 +8,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "rollup -c",
-    "test": "jest --coverage",
+    "test": "NODE_ENV=production jest --coverage",
     "prepublishOnly": "npm test && npm run build",
     "watch": "rollup -cw"
   },
@@ -41,6 +41,7 @@
     "babel-jest": "^24.8.0",
     "babel-preset-swiftcarrot": "^1.1.0",
     "jest": "^24.8.0",
+    "prettier": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
