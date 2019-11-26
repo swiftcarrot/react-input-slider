@@ -1,6 +1,6 @@
 {
   "name": "react-input-slider",
-  "version": "5.1.3",
+  "version": "5.1.4",
   "description": "React input slider component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -19,8 +19,16 @@
   "bugs": {
     "url": "https://github.com/swiftcarrot/react-input-slider/issues"
   },
-  "keywords": ["input", "react", "react-component", "slider"],
-  "files": ["index.d.ts", "dist"],
+  "keywords": [
+    "input",
+    "react",
+    "react-component",
+    "slider"
+  ],
+  "files": [
+    "index.d.ts",
+    "dist"
+  ],
   "author": "Wang Zuo <wangzuo@swiftcarrot.com> (https://swiftcarrot.com)",
   "homepage": "https://swiftcarrot.dev/react-input-slider",
   "license": "MIT",
@@ -47,6 +55,8 @@
   },
   "jest": {
     "collectCoverage": true,
-    "collectCoverageFrom": ["src/**/*.js"]
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   }
 }
