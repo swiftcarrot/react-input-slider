@@ -4,6 +4,10 @@
 
 - add support for rendering marks on slider
 
+## [5.1.4]
+
+- add type definition file
+
 ## [5.1.3]
 
 - add `props.dragStart` support
