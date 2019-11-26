@@ -23,4 +23,4 @@ interface InputSliderProps {
   };
 }
 
-export default class Slider extends React.Component<InputSliderProps> {}
+export default class InputSlider extends React.Component<InputSliderProps> {}
