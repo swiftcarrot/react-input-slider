@@ -19,6 +19,7 @@ const Slider = ({
   onDragStart,
   onDragEnd,
   onClick,
+  reverse,
   styles: customStyles,
   ...props
 }) => {
@@ -206,6 +207,7 @@ Slider.defaultProps = {
   ymax: 100,
   xstep: 1,
   ystep: 1,
+  reverse: false,
   styles: {}
 };
 

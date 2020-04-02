@@ -6,16 +6,40 @@ export default {
   component: Slider
 };
 
-export const Default = () => (
-  <div>
-    <Slider />
-    <br />
-    <Slider axis="y" />
-    <br />
-    <Slider axis="xy" />
-    <br />
-  </div>
-);
+export const Default = () => {
+  const [state, setState] = useState({ x: 120, y: 120 });
+
+  return (
+    <Fragment>
+      <div>{'x: ' + state.x}</div>
+      <div>{'y: ' + state.y}</div>
+      <Slider
+        axis="xy"
+        xmin={100}
+        xmax={360}
+        ymin={100}
+        ymax={360}
+        x={state.x}
+        y={state.y}
+        onChange={setState}
+      />
+      <Slider
+        axis="x"
+        xmin={100}
+        xmax={360}
+        x={state.x}
+        onChange={({ x }) => setState({ ...state, x })}
+      />
+      <Slider
+        axis="y"
+        ymin={100}
+        ymax={360}
+        y={state.y}
+        onChange={({ y }) => setState({ ...state, y })}
+      />
+    </Fragment>
+  );
+};
 
 export const XYExample = () => {
   const [state, setState] = useState({ x: 21, y: 73 });
@@ -62,6 +86,44 @@ export const YExample = () => {
     <Fragment>
       <div>{'y: ' + state.y}</div>
       <Slider axis="y" ymin={100} ymax={360} y={state.y} onChange={setState} />
+    </Fragment>
+  );
+};
+
+export const ReverseExample = () => {
+  const [state, setState] = useState({ x: 120, y: 120 });
+
+  return (
+    <Fragment>
+      <div>{'x: ' + state.x}</div>
+      <div>{'y: ' + state.y}</div>
+      <Slider
+        axis="xy"
+        xmin={100}
+        xmax={360}
+        ymin={100}
+        ymax={360}
+        x={state.x}
+        y={state.y}
+        onChange={setState}
+        reverse
+      />
+      <Slider
+        axis="x"
+        xmin={100}
+        xmax={360}
+        x={state.x}
+        onChange={({ x }) => setState({ ...state, x })}
+        reverse
+      />
+      <Slider
+        axis="y"
+        ymin={100}
+        ymax={360}
+        y={state.y}
+        onChange={({ y }) => setState({ ...state, y })}
+        reverse
+      />
     </Fragment>
   );
 };

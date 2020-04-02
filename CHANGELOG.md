@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [5.1.5]
+
+- add `reverse` support
+
 ## [5.1.4]
 
 - add type definition file
