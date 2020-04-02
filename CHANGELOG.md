@@ -2,8 +2,6 @@
 
 ## [Unreleased]
 
-- add support for rendering marks on slider
-
 ## [5.1.4]
 
 - add type definition file

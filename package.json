@@ -33,22 +33,22 @@
   "homepage": "https://swiftcarrot.dev/react-input-slider",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.5.5",
+    "@babel/runtime": "^7.9.2",
     "@emotion/core": "^10.0.14"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "babel-jest": "^24.8.0",
+    "@babel/core": "^7.9.0",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "babel-jest": "^25.2.4",
     "babel-preset-swiftcarrot": "^1.1.0",
-    "jest": "^24.8.0",
+    "jest": "^25.2.4",
     "prettier": "^1.19.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
-    "rollup": "^1.17.0",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup": "^2.3.2",
+    "rollup-plugin-babel": "^4.4.0"
   },
   "peerDependencies": {
     "react": "^16.8.4",
