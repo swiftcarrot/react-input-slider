@@ -84,6 +84,8 @@ v5 introduces a new styling api powered by [emotion](https://emotion.sh/)
 | onDragStart | function | handleDragStart                       | `null`  |
 | onDragEnd   | function | handleDragEnd                         | `null`  |
 | disabled    | boolean  | input disabled                        | false   |
+| xreverse    | boolean  | reverse on x                          | false   |
+| yreverse    | boolean  | reverse on y                          | false   |
 
 ### License
 
