@@ -19,7 +19,8 @@ const Slider = ({
   onDragStart,
   onDragEnd,
   onClick,
-  reverse,
+  xreverse,
+  yreverse,
   styles: customStyles,
   ...props
 }) => {
@@ -35,12 +36,10 @@ const Slider = ({
     if (top > 100) top = 100;
     if (top < 0) top = 0;
     if (axis === 'x') top = 0;
-    top += '%';
 
     if (left > 100) left = 100;
     if (left < 0) left = 0;
     if (axis === 'y') left = 0;
-    left += '%';
 
     return { top, left };
   }
@@ -148,8 +147,14 @@ const Slider = ({
 
   const pos = getPosition();
   const valueStyle = {};
-  if (axis === 'x') valueStyle.width = pos.left;
-  if (axis === 'y') valueStyle.height = pos.top;
+  if (axis === 'x') valueStyle.width = pos.left + '%';
+  if (axis === 'y') valueStyle.height = pos.top + '%';
+  if (xreverse) valueStyle.left = 100 - pos.left + '%';
+  if (yreverse) valueStyle.top = 100 - pos.top + '%';
+
+  const thumbStyle = {};
+  thumbStyle.left = xreverse ? 100 - pos.left + '%' : pos.left + '%';
+  thumbStyle.top = yreverse ? 100 - pos.top + '%' : pos.top + '%';
 
   const styles = {
     track: { ...defaultStyles[axis].track, ...customStyles.track },
@@ -184,7 +189,7 @@ const Slider = ({
       <div
         ref={handle}
         css={styles.thumb}
-        style={pos}
+        style={thumbStyle}
         onTouchStart={handleMouseDown}
         onMouseDown={handleMouseDown}
         onClick={function(e) {
@@ -207,7 +212,8 @@ Slider.defaultProps = {
   ymax: 100,
   xstep: 1,
   ystep: 1,
-  reverse: false,
+  xreverse: false,
+  yreverse: false,
   styles: {}
 };
 

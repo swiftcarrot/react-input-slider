@@ -4,7 +4,7 @@
 
 ## [5.1.5]
 
-- add `reverse` support
+- add reverse support
 
 ## [5.1.4]
 

@@ -106,7 +106,8 @@ export const ReverseExample = () => {
         x={state.x}
         y={state.y}
         onChange={setState}
-        reverse
+        xreverse
+        yreverse
       />
       <Slider
         axis="x"
@@ -114,7 +115,7 @@ export const ReverseExample = () => {
         xmax={360}
         x={state.x}
         onChange={({ x }) => setState({ ...state, x })}
-        reverse
+        xreverse
       />
       <Slider
         axis="y"
@@ -122,7 +123,7 @@ export const ReverseExample = () => {
         ymax={360}
         y={state.y}
         onChange={({ y }) => setState({ ...state, y })}
-        reverse
+        yreverse
       />
     </Fragment>
   );
