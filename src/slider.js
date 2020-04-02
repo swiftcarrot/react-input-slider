@@ -67,7 +67,10 @@ const Slider = ({
     const x = (dx !== 0 ? parseInt(dx / xstep, 10) * xstep : 0) + xmin;
     const y = (dy !== 0 ? parseInt(dy / ystep, 10) * ystep : 0) + ymin;
 
-    onChange({ x, y });
+    onChange({
+      x: xreverse ? xmax - x + xmin : x,
+      y: yreverse ? ymax - y + ymin : y
+    });
   }
 
   function handleMouseDown(e) {
