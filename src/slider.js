@@ -213,8 +213,6 @@ const Slider = ({
       : void 0
   };
 
-  console.log(styles.thumb);
-
   return (
     <div
       {...props}
