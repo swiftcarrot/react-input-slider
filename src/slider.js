@@ -167,46 +167,53 @@ const Slider = ({
     thumbContainer: { position: 'absolute', ...customStyles.thumbContainer }
   };
 
-  styles.thumb = {
-    ...styles.thumb,
-    top:
-      axis === 'x'
-        ? (styles.track.height - styles.thumb.height) / 2
-        : -styles.thumb.height / 2,
-    left:
-      axis === 'y'
-        ? (styles.track.width - styles.thumb.width) / 2
-        : -styles.thumb.width / 2
-  };
-
   function getComputedProp(prop, style, selector) {
-    if (style[selector] === undefined || style[selector][prop] === undefined) {
+    if (
+      selector === undefined ||
+      style[selector] === undefined ||
+      style[selector][prop] === undefined
+    ) {
       return style[prop];
     }
 
     return style[selector][prop];
   }
 
-  if (styles.thumb['&:hover']) {
-    styles.thumb = {
-      ...styles.thumb,
-      '&:hover': {
-        ...styles.thumb['&:hover'],
-        top:
-          axis === 'x'
-            ? (getComputedProp('height', styles.track, '&:hover') -
-                getComputedProp('height', styles.thumb, '&:hover')) /
-              2
-            : -getComputedProp('height', styles.thumb, '&:hover') / 2,
-        left:
-          axis === 'y'
-            ? (getComputedProp('width', styles.track, '&:hover') -
-                getComputedProp('width', styles.thumb, '&:hover')) /
-              2
-            : -getComputedProp('width', styles.thumb, '&:hover') / 2
-      }
+  function getThumbPostionStyleByVariant(styles, variant) {
+    return {
+      top:
+        axis === 'x'
+          ? (getComputedProp('height', styles.track, variant) -
+              getComputedProp('height', styles.thumb, variant)) /
+            2
+          : -getComputedProp('height', styles.thumb, variant) / 2,
+      left:
+        axis === 'y'
+          ? (getComputedProp('width', styles.track, variant) -
+              getComputedProp('width', styles.thumb, variant)) /
+            2
+          : -getComputedProp('width', styles.thumb, variant) / 2
     };
   }
+
+  styles.thumb = {
+    ...styles.thumb,
+    ...getThumbPostionStyleByVariant(styles),
+    '&:hover': styles.thumb['&:hover']
+      ? {
+          ...styles.thumb['&:hover'],
+          ...getThumbPostionStyleByVariant(styles, '&:hover')
+        }
+      : void 0,
+    '&:focus': styles.thumb['&:focus']
+      ? {
+          ...styles.thumb['&:focus'],
+          ...getThumbPostionStyleByVariant(styles, '&:focus')
+        }
+      : void 0
+  };
+
+  console.log(styles.thumb);
 
   return (
     <div

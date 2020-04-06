@@ -30,7 +30,7 @@ test('x', () => {
         }
       >
         <div
-          className="css-8h56vq"
+          className="css-1redub2"
         />
       </div>
     </div>
@@ -65,7 +65,7 @@ test('y', () => {
         }
       >
         <div
-          className="css-1r0j9sa"
+          className="css-qvw53o"
         />
       </div>
     </div>
@@ -96,7 +96,7 @@ test('xy', () => {
         }
       >
         <div
-          className="css-avefca"
+          className="css-yfonmy"
         />
       </div>
     </div>
