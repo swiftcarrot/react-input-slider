@@ -18,7 +18,7 @@ test('x', () => {
         }
       />
       <div
-        className="css-1ed5bza"
+        className="css-12efcmn"
         onClick={[Function]}
         onMouseDown={[Function]}
         onTouchStart={[Function]}
@@ -28,7 +28,11 @@ test('x', () => {
             "top": "0%",
           }
         }
-      />
+      >
+        <div
+          className="css-8h56vq"
+        />
+      </div>
     </div>
   `);
 });
@@ -49,7 +53,7 @@ test('y', () => {
         }
       />
       <div
-        className="css-hpz2p"
+        className="css-12efcmn"
         onClick={[Function]}
         onMouseDown={[Function]}
         onTouchStart={[Function]}
@@ -59,7 +63,11 @@ test('y', () => {
             "top": "50%",
           }
         }
-      />
+      >
+        <div
+          className="css-1r0j9sa"
+        />
+      </div>
     </div>
   `);
 });
@@ -76,7 +84,7 @@ test('xy', () => {
         style={Object {}}
       />
       <div
-        className="css-d0dncw"
+        className="css-12efcmn"
         onClick={[Function]}
         onMouseDown={[Function]}
         onTouchStart={[Function]}
@@ -86,7 +94,11 @@ test('xy', () => {
             "top": "50%",
           }
         }
-      />
+      >
+        <div
+          className="css-avefca"
+        />
+      </div>
     </div>
   `);
 });

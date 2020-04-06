@@ -56,6 +56,9 @@ v5 introduces a new styling api powered by [emotion](https://emotion.sh/)
     active: {
       backgroundColor: 'red'
     },
+    thumbContainer: {
+      opacity: 0.2
+    },
     thumb: {
       width: 50,
       height: 50

@@ -163,23 +163,50 @@ const Slider = ({
     track: { ...defaultStyles[axis].track, ...customStyles.track },
     active: { ...defaultStyles[axis].active, ...customStyles.active },
     thumb: { ...defaultStyles[axis].thumb, ...customStyles.thumb },
-    disabled: { ...defaultStyles.disabled, ...customStyles.disabled }
+    disabled: { ...defaultStyles.disabled, ...customStyles.disabled },
+    thumbContainer: { position: 'absolute', ...customStyles.thumbContainer }
   };
 
   styles.thumb = {
-    position: 'absolute',
-    '&:after': {
-      ...styles.thumb,
-      top:
-        axis === 'x'
-          ? (styles.track.height - styles.thumb.height) / 2
-          : -styles.thumb.height / 2,
-      left:
-        axis === 'y'
-          ? (styles.track.width - styles.thumb.width) / 2
-          : -styles.thumb.width / 2
-    }
+    ...styles.thumb,
+    top:
+      axis === 'x'
+        ? (styles.track.height - styles.thumb.height) / 2
+        : -styles.thumb.height / 2,
+    left:
+      axis === 'y'
+        ? (styles.track.width - styles.thumb.width) / 2
+        : -styles.thumb.width / 2
   };
+
+  function getComputedProp(prop, style, selector) {
+    if (style[selector] === undefined || style[selector][prop] === undefined) {
+      return style[prop];
+    }
+
+    return style[selector][prop];
+  }
+
+  if (styles.thumb['&:hover']) {
+    styles.thumb = {
+      ...styles.thumb,
+      '&:hover': {
+        ...styles.thumb['&:hover'],
+        top:
+          axis === 'x'
+            ? (getComputedProp('height', styles.track, '&:hover') -
+                getComputedProp('height', styles.thumb, '&:hover')) /
+              2
+            : -getComputedProp('height', styles.thumb, '&:hover') / 2,
+        left:
+          axis === 'y'
+            ? (getComputedProp('width', styles.track, '&:hover') -
+                getComputedProp('width', styles.thumb, '&:hover')) /
+              2
+            : -getComputedProp('width', styles.thumb, '&:hover') / 2
+      }
+    };
+  }
 
   return (
     <div
@@ -191,7 +218,7 @@ const Slider = ({
       <div css={styles.active} style={valueStyle} />
       <div
         ref={handle}
-        css={styles.thumb}
+        css={styles.thumbContainer}
         style={thumbStyle}
         onTouchStart={handleMouseDown}
         onMouseDown={handleMouseDown}
@@ -199,7 +226,9 @@ const Slider = ({
           e.stopPropagation();
           e.nativeEvent.stopImmediatePropagation();
         }}
-      />
+      >
+        <div css={styles.thumb}></div>
+      </div>
     </div>
   );
 };
