@@ -150,7 +150,11 @@ export const CustomExample = () => {
           thumb: {
             width: 20,
             height: 40,
-            opacity: 0.8
+            opacity: 0.8,
+            '&:hover': {
+              width: 40,
+              height: 80
+            }
           }
         }}
       />

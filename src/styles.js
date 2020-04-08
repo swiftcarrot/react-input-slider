@@ -25,6 +25,7 @@ const thumb = {
   borderRadius: '50%',
   boxShadow: '0 1px 1px rgba(0,0,0,.5)',
   userSelect: 'none',
+  cursor: 'pointer',
   boxSizing: 'border-box'
 };
 

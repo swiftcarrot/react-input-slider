@@ -15,8 +15,8 @@ interface InputSliderProps {
   onDragStart?: (e: MouseEvent) => void;
   onDragEnd?: (e: MouseEvent) => void;
   disabled?: boolean;
-  xreverse: boolean;
-  yreverse: boolean;
+  xreverse?: boolean;
+  yreverse?: boolean;
   styles?: {
     track?: Interpolation;
     active?: Interpolation;
