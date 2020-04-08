@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [5.1.6]
+
 - improve styling for thumb
 - fix typescript definition
 - thumb with pointer cursor by default
