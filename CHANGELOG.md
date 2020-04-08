@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+- improve styling for thumb
+- fix typescript definition
+- thumb with pointer cursor by default
+
 ## [5.1.5]
 
 - add reverse support
