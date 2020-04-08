@@ -155,30 +155,24 @@ const Slider = ({
   if (xreverse) valueStyle.left = 100 - pos.left + '%';
   if (yreverse) valueStyle.top = 100 - pos.top + '%';
 
-  const thumbStyle = {};
-  thumbStyle.left = xreverse ? 100 - pos.left + '%' : pos.left + '%';
-  thumbStyle.top = yreverse ? 100 - pos.top + '%' : pos.top + '%';
+  const handleStyle = {
+    position: 'absolute',
+    transform: 'translate(-50%, -50%)'
+  };
+  handleStyle.left = xreverse ? 100 - pos.left + '%' : pos.left + '%';
+  handleStyle.top = yreverse ? 100 - pos.top + '%' : pos.top + '%';
+
+  if (axis === 'x') {
+    handleStyle.top = '50%';
+  } else if (axis === 'y') {
+    handleStyle.left = '50%';
+  }
 
   const styles = {
     track: { ...defaultStyles[axis].track, ...customStyles.track },
     active: { ...defaultStyles[axis].active, ...customStyles.active },
     thumb: { ...defaultStyles[axis].thumb, ...customStyles.thumb },
     disabled: { ...defaultStyles.disabled, ...customStyles.disabled }
-  };
-
-  styles.thumb = {
-    position: 'absolute',
-    '&:after': {
-      ...styles.thumb,
-      top:
-        axis === 'x'
-          ? (styles.track.height - styles.thumb.height) / 2
-          : -styles.thumb.height / 2,
-      left:
-        axis === 'y'
-          ? (styles.track.width - styles.thumb.width) / 2
-          : -styles.thumb.width / 2
-    }
   };
 
   return (
@@ -191,15 +185,16 @@ const Slider = ({
       <div css={styles.active} style={valueStyle} />
       <div
         ref={handle}
-        css={styles.thumb}
-        style={thumbStyle}
+        style={handleStyle}
         onTouchStart={handleMouseDown}
         onMouseDown={handleMouseDown}
         onClick={function(e) {
           e.stopPropagation();
           e.nativeEvent.stopImmediatePropagation();
         }}
-      />
+      >
+        <div css={styles.thumb} />
+      </div>
     </div>
   );
 };
