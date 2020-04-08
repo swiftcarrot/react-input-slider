@@ -18,17 +18,22 @@ test('x', () => {
         }
       />
       <div
-        className="css-1ed5bza"
         onClick={[Function]}
         onMouseDown={[Function]}
         onTouchStart={[Function]}
         style={
           Object {
             "left": "50%",
-            "top": "0%",
+            "position": "absolute",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
           }
         }
-      />
+      >
+        <div
+          className="css-p9m01q"
+        />
+      </div>
     </div>
   `);
 });
@@ -49,17 +54,22 @@ test('y', () => {
         }
       />
       <div
-        className="css-hpz2p"
         onClick={[Function]}
         onMouseDown={[Function]}
         onTouchStart={[Function]}
         style={
           Object {
-            "left": "0%",
+            "left": "50%",
+            "position": "absolute",
             "top": "50%",
+            "transform": "translate(-50%, -50%)",
           }
         }
-      />
+      >
+        <div
+          className="css-p9m01q"
+        />
+      </div>
     </div>
   `);
 });
@@ -76,17 +86,22 @@ test('xy', () => {
         style={Object {}}
       />
       <div
-        className="css-d0dncw"
         onClick={[Function]}
         onMouseDown={[Function]}
         onTouchStart={[Function]}
         style={
           Object {
             "left": "50%",
+            "position": "absolute",
             "top": "50%",
+            "transform": "translate(-50%, -50%)",
           }
         }
-      />
+      >
+        <div
+          className="css-p9m01q"
+        />
+      </div>
     </div>
   `);
 });
