@@ -157,10 +157,10 @@ const Slider = ({
 
   const handleStyle = {
     position: 'absolute',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    left: xreverse ? 100 - pos.left + '%' : pos.left + '%',
+    top: yreverse ? 100 - pos.top + '%' : pos.top + '%'
   };
-  handleStyle.left = xreverse ? 100 - pos.left + '%' : pos.left + '%';
-  handleStyle.top = yreverse ? 100 - pos.top + '%' : pos.top + '%';
 
   if (axis === 'x') {
     handleStyle.top = '50%';
