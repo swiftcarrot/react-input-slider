@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Interpolation } from '@emotion/serialize';
 
-interface InputSliderProps {
+export interface InputSliderProps {
   axis?: 'x' | 'y' | 'xy';
   x?: number;
   xmax?: number;
