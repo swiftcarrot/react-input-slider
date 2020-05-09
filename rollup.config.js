@@ -1,4 +1,4 @@
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import pkg from './package.json';
@@ -16,7 +16,7 @@ export default [
     external,
     plugins: [
       babel({
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
         plugins: ['@babel/transform-runtime']
       }),
       nodeResolve(),
@@ -33,7 +33,7 @@ export default [
     external,
     plugins: [
       babel({
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
         plugins: [['@babel/transform-runtime', { useESModules: true }]]
       }),
       nodeResolve(),
