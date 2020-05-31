@@ -197,7 +197,7 @@ const Slider = ({
       {...props}
       ref={container}
       css={[styles.track, disabled && styles.disabled]}
-      onClick={handleClick}
+      onClick={handleAxisClick}
     >
       <div css={styles.active} style={valueStyle} />
       <div
@@ -210,7 +210,7 @@ const Slider = ({
           e.nativeEvent.stopImmediatePropagation();
         }}
       >
-        <div css={styles.thumb} />
+        <div css={styles.thumb} onClick={handleThumbClick} onDoubleClick={handleThumbDoubleClick} />
       </div>
     </div>
   );
