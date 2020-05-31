@@ -18,7 +18,9 @@ const Slider = ({
   onChange,
   onDragStart,
   onDragEnd,
-  onClick,
+  onAxisClick,
+  onThumbClick,
+  onThumbDoubleClick,
   xreverse,
   yreverse,
   styles: customStyles,
@@ -145,7 +147,22 @@ const Slider = ({
       top: clientPos.y - rect.top
     });
 
-    if (onClick) onClick(e);
+    if (onAxisClick) onAxisClick(e);
+  }
+
+  // semantic alias for handleClick
+  function handleAxisClick(e) {
+    handleClick(e);
+  }
+
+  // on thumb (element) click 
+  function handleThumbClick(e) {
+    if (onThumbClick) onThumbClick(e);
+  }
+
+  // on thumb (element) double-click
+  function handleThumbDoubleClick(e) {
+    if (onThumbDoubleClick) onThumbDoubleClick(e);
   }
 
   const pos = getPosition();
