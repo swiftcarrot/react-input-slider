@@ -19,6 +19,9 @@ const Slider = ({
   onDragStart,
   onDragEnd,
   onClick,
+  onAxisClick,
+  onThumbClick,
+  onThumbDoubleClick,
   xreverse,
   yreverse,
   styles: customStyles,
@@ -145,7 +148,23 @@ const Slider = ({
       top: clientPos.y - rect.top
     });
 
+    if (onAxisClick) onAxisClick(e);
     if (onClick) onClick(e);
+  }
+
+  // semantic alias for handleClick
+  function handleAxisClick(e) {
+    handleClick(e);
+  }
+
+  // on thumb (element) click 
+  function handleThumbClick(e) {
+    if (onThumbClick) onThumbClick(e);
+  }
+
+  // on thumb (element) double-click
+  function handleThumbDoubleClick(e) {
+    if (onThumbDoubleClick) onThumbDoubleClick(e);
   }
 
   const pos = getPosition();
@@ -180,7 +199,7 @@ const Slider = ({
       {...props}
       ref={container}
       css={[styles.track, disabled && styles.disabled]}
-      onClick={handleClick}
+      onClick={handleAxisClick}
     >
       <div css={styles.active} style={valueStyle} />
       <div
@@ -193,7 +212,7 @@ const Slider = ({
           e.nativeEvent.stopImmediatePropagation();
         }}
       >
-        <div css={styles.thumb} />
+        <div css={styles.thumb} onDoubleClick={handleThumbDoubleClick} />
       </div>
     </div>
   );

@@ -69,23 +69,26 @@ v5 introduces a new styling api powered by [emotion](https://emotion.sh/)
 
 ### Props
 
-| Name        | Type     | Description                           | Default |
-| ----------- | -------- | ------------------------------------- | ------- |
-| axis        | string   | type of slider (`'x'`, `'y'`, `'xy'`) | `'x'`   |
-| x           | number   | value of x                            | `50`    |
-| xmax        | number   | max of x                              | `100`   |
-| xmin        | number   | min of x                              | `0`     |
-| y           | number   | value of y                            | `50`    |
-| ymax        | number   | max of y                              | `100`   |
-| ymin        | number   | min of y                              | `0`     |
-| xstep       | number   | step of x                             | `1`     |
-| ystep       | number   | step of y                             | `1`     |
-| onChange    | function | handleChange                          | `null`  |
-| onDragStart | function | handleDragStart                       | `null`  |
-| onDragEnd   | function | handleDragEnd                         | `null`  |
-| disabled    | boolean  | input disabled                        | false   |
-| xreverse    | boolean  | reverse on x                          | false   |
-| yreverse    | boolean  | reverse on y                          | false   |
+| Name                | Type     | Description                           | Default |
+| --------------      | -------- | ------------------------------------- | ------- |
+| axis                | string   | type of slider (`'x'`, `'y'`, `'xy'`) | `'x'`   |
+| x                   | number   | value of x                            | `50`    |
+| xmax                | number   | max of x                              | `100`   |
+| xmin                | number   | min of x                              | `0`     |
+| y                   | number   | value of y                            | `50`    |
+| ymax                | number   | max of y                              | `100`   |
+| ymin                | number   | min of y                              | `0`     |
+| xstep               | number   | step of x                             | `1`     |
+| ystep               | number   | step of y                             | `1`     |
+| onChange            | function | handleChange                          | `null`  |
+| onDragStart         | function | handleDragStart                       | `null`  |
+| onDragEnd           | function | handleDragEnd                         | `null`  |
+| onClick             | function | handleAxisClick (retrocompatibity)    | `null`  |
+| onAxisClick         | function | handleAxisClick                       | `null`  |
+| onThumbDoubleClick  | function | handleThumbDoubleClick                | `null`  |
+| disabled            | boolean  | input disabled                        | false   |
+| xreverse            | boolean  | reverse on x                          | false   |
+| yreverse            | boolean  | reverse on y                          | false   |
 
 ### License
 
