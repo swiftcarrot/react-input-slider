@@ -210,7 +210,7 @@ const Slider = ({
           e.nativeEvent.stopImmediatePropagation();
         }}
       >
-        <div css={styles.thumb} onClick={handleThumbClick} onDoubleClick={handleThumbDoubleClick} />
+        <div css={styles.thumb} onDoubleClick={handleThumbDoubleClick} />
       </div>
     </div>
   );

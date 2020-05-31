@@ -83,8 +83,8 @@ v5 introduces a new styling api powered by [emotion](https://emotion.sh/)
 | onChange            | function | handleChange                          | `null`  |
 | onDragStart         | function | handleDragStart                       | `null`  |
 | onDragEnd           | function | handleDragEnd                         | `null`  |
+| onClick             | function | handleAxisClick (retrocompatibity)    | `null`  |
 | onAxisClick         | function | handleAxisClick                       | `null`  |
-| onThumbClick        | function | handleThumbClick                      | `null`  |
 | onThumbDoubleClick  | function | handleThumbDoubleClick                | `null`  |
 | disabled            | boolean  | input disabled                        | false   |
 | xreverse            | boolean  | reverse on x                          | false   |
