@@ -18,6 +18,7 @@ const Slider = ({
   onChange,
   onDragStart,
   onDragEnd,
+  onClick,
   onAxisClick,
   onThumbClick,
   onThumbDoubleClick,
@@ -148,6 +149,7 @@ const Slider = ({
     });
 
     if (onAxisClick) onAxisClick(e);
+    if (onClick) onClick(e);
   }
 
   // semantic alias for handleClick
