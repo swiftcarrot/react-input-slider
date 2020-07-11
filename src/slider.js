@@ -18,7 +18,6 @@ const Slider = ({
   onChange,
   onDragStart,
   onDragEnd,
-  onClick,
   xreverse,
   yreverse,
   styles: customStyles,
