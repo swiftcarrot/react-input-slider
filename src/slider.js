@@ -77,6 +77,8 @@ const Slider = ({
     if (disabled) return;
 
     e.preventDefault();
+    e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
     const dom = handle.current;
     const clientPos = getClientPosition(e);
 
