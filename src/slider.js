@@ -134,18 +134,37 @@ const Slider = ({
     }
   }
 
-  function handleClick(e) {
+  function handleTrackMouseDown(e) {
     if (disabled) return;
 
+    e.preventDefault();
     const clientPos = getClientPosition(e);
     const rect = container.current.getBoundingClientRect();
+
+    start.current = {
+      x: clientPos.x - rect.left,
+      y: clientPos.y - rect.top
+    };
+
+    offset.current = {
+      x: clientPos.x,
+      y: clientPos.y
+    };
+
+    document.addEventListener('mousemove', handleDrag);
+    document.addEventListener('mouseup', handleDragEnd);
+    document.addEventListener('touchmove', handleDrag, { passive: false });
+    document.addEventListener('touchend', handleDragEnd);
+    document.addEventListener('touchcancel', handleDragEnd);
 
     change({
       left: clientPos.x - rect.left,
       top: clientPos.y - rect.top
     });
 
-    if (onClick) onClick(e);
+    if (onDragStart) {
+      onDragStart(e);
+    }
   }
 
   const pos = getPosition();
@@ -180,7 +199,8 @@ const Slider = ({
       {...props}
       ref={container}
       css={[styles.track, disabled && styles.disabled]}
-      onClick={handleClick}
+      onTouchStart={handleTrackMouseDown}
+      onMouseDown={handleTrackMouseDown}
     >
       <div css={styles.active} style={valueStyle} />
       <div
