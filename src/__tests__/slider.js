@@ -7,7 +7,8 @@ test('x', () => {
   expect(component.toJSON()).toMatchInlineSnapshot(`
     <div
       className="css-mcm35l"
-      onClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
     >
       <div
         className="css-c5m0sj"
@@ -43,7 +44,8 @@ test('y', () => {
   expect(component.toJSON()).toMatchInlineSnapshot(`
     <div
       className="css-1munbi2"
-      onClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
     >
       <div
         className="css-ee7l6q"
@@ -79,7 +81,8 @@ test('xy', () => {
   expect(component.toJSON()).toMatchInlineSnapshot(`
     <div
       className="css-1rhaxo2"
-      onClick={[Function]}
+      onMouseDown={[Function]}
+      onTouchStart={[Function]}
     >
       <div
         className="css-0"
