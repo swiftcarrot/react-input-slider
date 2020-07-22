@@ -2,7 +2,10 @@
 
 ## [Unreleased]
 
+## [6.0.0]
+
 - upgrade rollup
+- allow mouse down and touch start at any position on the track [#63](https://github.com/swiftcarrot/react-input-slider/pull/63)
 
 ## [5.1.7]
 
