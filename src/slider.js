@@ -131,7 +131,7 @@ const Slider = ({
     document.removeEventListener('touchcancel', handleDragEnd);
 
     if (onDragEnd) {
-      onDragEnd(e);
+      onDragEnd(getPos(e));
     }
   }
 
