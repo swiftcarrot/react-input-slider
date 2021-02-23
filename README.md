@@ -17,7 +17,7 @@ npm install react-input-slider --save
 
 ### Storybook Demo
 
-[http://react-input-slider.caitouyun.com/](http://react-input-slider.caitouyun.com/)
+[http://react-input-slider.caitouyun.com](http://react-input-slider.caitouyun.com)
 
 ### Usage
 
