@@ -15,9 +15,9 @@ yarn add react-input-slider
 npm install react-input-slider --save
 ```
 
-### Demo
+### Storybook Demo
 
-[https://swiftcarrot.dev/react-input-slider](https://swiftcarrot.dev/react-input-slider)
+[http://react-input-slider.caitouyun.com/](http://react-input-slider.caitouyun.com/)
 
 ### Usage
 
