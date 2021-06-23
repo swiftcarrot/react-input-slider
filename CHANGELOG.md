@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [6.0.1]
+
+- update react peer deps
+
 ## [6.0.0]
 
 - upgrade rollup
