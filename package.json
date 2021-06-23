@@ -58,8 +58,8 @@
     "rollup": "^2.8.2"
   },
   "peerDependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "jest": {
     "collectCoverage": true,
